@@ -1,0 +1,5 @@
+.focusLine{
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-dasharray: 5,5;
+}
