@@ -17,50 +17,72 @@
 
   <h3>What are you looking for?</h3>
 
+
+  <div class="questionGroup">
   <div class="question">
-    What is the rate for your current procedure (procedure "A")?
-    <input id="baserateInput" class="fixed" autocomplete="off" default="5" />%
-    <div class="slider" id="baserateInputSlider" data-min="0" data-max="100" data-default="5"></div>
+    <div class="label">Current conversion rate is</div>
+    <div class="mySliderControl">
+                   <input id="baserateInput" class="fixed" autocomplete="off"  />%
+                   <div class="slider" id="baserateInputSlider" data-min="0" data-max="100" data-default="5" data-step="0.1"></div>
+    </div>
+    <div class="explain">This is the conversion rate of the control treatment. In medical trials, it is the success rate of the placebo</div>
   </div>
 
   <div class="question">
-    What is the minimum improvement (in percentage points) required to convert to a new procedure "B"?
-    <input id="diffInput" class="fixed" autocomplete="off" default="2" />
-    <div class="slider" id="diffInputSlider" data-min="0" data-max="100" data-default="2"></div>
+    <div class="label">A new treatment needs to increase conversions by</div>
+    <div class="mySliderControl">
+      <input id="diffInput" class="fixed" autocomplete="off"  />%
+      <div class="slider" id="diffInputSlider" data-min="0" data-max="100" data-default="2" data-step="0.1"></div>
+    </div>
+    <div class="explain"></div>
   </div>
 
   <div class="question">
-    What is your acceptable false acceptance rate <span class="alpha">&alpha;</span>?
-    <input id="alphaInput" class="fixed" autocomplete="off" default="5" />
-    <div   class = "slider" id="alphaInputSlider" data-min = "0" data-max="100" data-default="5"></div>
+    <div class="label">Acceptable false conversion rate <span class="alpha">&alpha;</span> is </div>
+    <div class="mySliderControl">
+      <input id="alphaInput" class="alpha" autocomplete="off"  />%
+      <div   class = "slider" id="alphaInputSlider" data-min = "0" data-max="25" data-default="5" data-step="0.1"></div>
+    </div>
+    <div class="explain"></div>
   </div>
 
   <div class="question">
-    What is your acceptable is your acceptable false rejection rate <span class="beta">&beta;</span>?
-    <input id="betaInput" class="fixed" autocomplete="off" default="1" />
-    <div class = "slider" id = "betaInputSlider" data-min="0" data-max="100" data-default="20"> </div>
+    <div class="label">Acceptable false rejection rate <span class="beta">&beta;</span> is </div>
+    <div class="mySliderControl">
+      <input id="betaInput" class="beta" autocomplete="off" />%
+      <div class = "slider" id = "betaInputSlider" data-min="0" data-max="80" data-default="20" data-step="0.5"> </div>
+    </div>
+    <div class="explain"></div>
   </div>
+</div>
+
+<div class="paramSummary">
+  <h4>Experiment design summary</h4>
+  <ul>
+  <li>The control treatment has a success rate of <span id="alpha3" class="alpha"></span>%</li>
+  <li>Worth changing to new treament if its success rate is at least <span id="alternative_min"></span>%</li>
+  <li>With <b><span id="trials2"></span></b> trials of each treatment:
+    <ul>
+      <li> If both treatments have the same success rate, we incur the costs of changing for no benfit <span id="alpha1" class="alpha">&alpha;</span>% of the time.</li>
+      <li> If the alternative treatment has a success rate of <span></span>, we reject it and miss out on the benefits <span id="beta1" class="beta">&beta;</span>% of the time.</li>
+  </ul>
+</div>
+
 
   <h3>Suggested number of trials</h3>
 
-  It is suggested that you run your experiment <span id="#trials1">N</span> number of times.
-
-  Note that with <span id="#trails2">N</span> trials:
-  <ul>
-    <li>If there is absolutely no difference between procedure A and B you would still
-  conclude to incur the costs of a change <span id="#alpha1" class="alpha">&alpha;</span>% of the time. </li>
-    <li>If the difference between treatments A and B just hit your threshold of being worth converting
-      (i.e. procedure A has a success rate of A, and procedure B has a success rate of B) then your experiment
-      will conclude to <i>reject</i> the superior treatment B <span id="#beta1" class="beta">&beta;</span>% .
-  </ul>
+  It is suggested that you run your experiment <b><span id="trials1">N</span></b> number of times.
 
   <div class="question">
-    How many trials do you wish to run:
-    <input id="NumberInput" class="fixed" autocomplete="off" default="1000"/>
-    <div id="NumberInputSlider">N = 1000</div>
+    <div class="label">How many trials do you wish to run:</div>
+    <div class="mySliderControl">
+      <input id="trialInput" class="fixed" autocomplete="off"/>
+      <div class="slider2" id="trialInputSlider" data-min = "10" data-max="10000" data-default="1000"></div>
+    </div>
   </div>
 
-  <button> Continue with 1000 trials</button>
+
+  <button id="generateData"> Continue with 1000 trials</button>
 
 </div>
 
@@ -85,6 +107,7 @@ Currently selected point:
   More stuff
 </div>
 
+<script type="text/javascript" src="normal_dist.js"></script>
 <script type="text/javascript" src="setup_questions.js"></script>
 
 

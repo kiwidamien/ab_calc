@@ -10,6 +10,85 @@
   background-color: lemonchiffon;
 }
 
+.questionGroup{
+  min-width:500px;
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 .question{
-  background-color:yellow;
+  background-color:#F0F8FF;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  border: 1px solid #0aa;
+  width: 100%;
+  min-width: 500px;
+}
+
+.paramSummary{
+  padding: 0px;
+  border: 1px solid #0aa;
+  width: 30%;
+  align: right;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.label{
+  display: inline-block;
+  width: 35%;
+  font: 1.2em 'League Gothic';
+  vertical-align:middle;
+  margin: 0;
+}
+
+.mySliderControl{
+  display: inline-block;
+  width:60%;
+}
+
+.explain{
+  font-size: small;
+  padding-top: 5px;
+  font-style: italic;
+}
+
+.mySliderControl > input{
+  height: 36px;
+  font: 1.2em 'League Gothic';
+  font-weight: bold;
+  text-align: right;
+  background-color: transparent;
+  border: 0px solid;
+}
+
+input:focus{
+  background-color: #fff;
+  border: 1px solid #f00;
+}
+
+input:hover{
+  border: 1px solid #f00;
+}
+
+.alpha{
+  font-weight: bold;
+  color: green;
+}
+
+.beta{
+  font-weight: bold;
+  color: peru;
+}
+
+#generateData{
+  display: block;
+  background-color: lightblue;
+  padding: 20px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 10px;
 }
