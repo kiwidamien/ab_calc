@@ -13,10 +13,7 @@
 <body>
 
 <div id="setup">
-  <h1>Experiment setup</h1>
-
-  <h3>What are you looking for?</h3>
-
+  <h1>Experimental design</h1>
 
   <div class="questionGroup">
   <div class="question">
@@ -32,7 +29,7 @@
     <div class="label">A new treatment needs to increase conversions by</div>
     <div class="mySliderControl">
       <input id="diffInput" class="fixed" autocomplete="off"  />%
-      <div class="slider" id="diffInputSlider" data-min="0" data-max="100" data-default="2" data-step="0.1"></div>
+      <div class="slider" id="diffInputSlider" data-min="0" data-max="40" data-default="2" data-step="0.1"></div>
     </div>
     <div class="explain"></div>
   </div>
@@ -57,11 +54,15 @@
 </div>
 
 <div class="paramSummary">
-  <h4>Experiment design summary</h4>
+  <h2>Experiment design summary</h2>
   <ul>
-  <li>The control treatment has a success rate of <span id="alpha3" class="alpha"></span>%</li>
-  <li>Worth changing to new treament if its success rate is at least <span id="alternative_min"></span>%</li>
-  <li>With <b><span id="trials2"></span></b> trials of each treatment:
+    <li>The control treatment has a success rate of <span id="alpha3" class="alpha"></span>%</li>
+    <li>Worth changing to new treament if its success rate is at least <span id="alternative_min"></span>%</li>
+  </ul>
+
+  With the suggested
+    <div class="large_suggest"><span id="trials2"></span></div>
+  we have two possible ways to make an error:
     <ul>
       <li> If both treatments have the same success rate, we incur the costs of changing for no benfit <span id="alpha1" class="alpha">&alpha;</span>% of the time.</li>
       <li> If the alternative treatment has a success rate of <span></span>, we reject it and miss out on the benefits <span id="beta1" class="beta">&beta;</span>% of the time.</li>
@@ -79,6 +80,7 @@
       <input id="trialInput" class="fixed" autocomplete="off"/>
       <div class="slider2" id="trialInputSlider" data-min = "10" data-max="10000" data-default="1000"></div>
     </div>
+    <div id="trialNumberSuggest"></div>
   </div>
 
 

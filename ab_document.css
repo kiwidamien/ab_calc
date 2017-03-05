@@ -10,8 +10,17 @@
   background-color: lemonchiffon;
 }
 
+h1, h2,h3, h4{
+  text-align:center;
+  color: darkblue;
+}
+
+li{
+  margin: 10px 0;
+  text-align: left;
+}
+
 .questionGroup{
-  min-width:500px;
   width: 60%;
   display: inline-block;
   vertical-align: top;
@@ -19,24 +28,30 @@
 
 .question{
   background-color:#F0F8FF;
-  padding-left: 10px;
+  padding-left:10px;
   padding-bottom: 30px;
   margin-top: 0px;
   margin-bottom: 15px;
   border: 1px solid #0aa;
   width: 100%;
-  min-width: 500px;
 }
 
 .paramSummary{
-  padding: 0px;
+  margin-left: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  float: right;
   border: 1px solid #0aa;
-  width: 30%;
-  align: right;
+  width: 35%;
   display: inline-block;
   vertical-align: top;
+  text-align: center;
 }
 
+.large_suggest{
+    font: 6em 'Leauge Gothic';
+    color: darkblue;
+}
 div.label{
   display: inline-block;
   width: 35%;
@@ -91,4 +106,13 @@ input:hover{
   text-align: justify;
   margin: 0 auto;
   margin-top: 10px;
+}
+
+#trialNumberSuggest{
+  text-align:center;
+  font-style:italic;
+  margin-top: 3px;
+  font-weight: normal;
+  font-size: 0.8em;
+  height: 1.2em;
 }
