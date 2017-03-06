@@ -82,7 +82,8 @@ function doSetupUpdate(updateN){
     sampleSizeInput.css('color', 'black');
     msgDiv.text("");
   }
-  $("#alternative_min").text(Number(baserate)+Number(min_diff));
+  $("span[id*='alternative_min']").text(Number(baserate)+Number(min_diff));
+  $("#our_baserate").text(baserate);
   $('#generateData').text("Continue with " + currentSampleSize + " trials");
 }
 
